@@ -74,3 +74,34 @@ def fit(model: Module, optimiser: Optimizer, loss_fn: Callable, epochs: int, dat
     print('Finished.')
 
     return [epochs_accuracies,epochs_losses]
+
+
+def proto_net_episode(model: Module,
+                      optimiser: Optimizer,
+                      loss_fn: Callable,
+                      x: torch.Tensor,
+
+                      y: torch.Tensor,
+                      n_shot: int,
+                      k_way: int,
+                      q_queries: int,
+                      distance: str,
+                      train: bool):
+    """Performs a single training episode for a Prototypical Network.
+
+    # Arguments
+        model: Prototypical Network to be trained.
+        optimiser: Optimiser to calculate gradient step
+        loss_fn: Loss function to calculate between predictions and outputs. Should be cross-entropy
+        x: Input samples of few shot classification task
+        y: Input labels of few shot classification task
+        n_shot: Number of examples per class in the support set
+        k_way: Number of classes in the few shot classification task
+        q_queries: Number of examples per class in the query set
+        distance: Distance metric to use when calculating distance between class prototypes and queries
+        train: Whether (True) or not (False) to perform a parameter update
+
+    # Returns
+        loss: Loss of the Prototypical Network on this task
+        y_pred: Predicted class probabilities for the query set on this task
+    """

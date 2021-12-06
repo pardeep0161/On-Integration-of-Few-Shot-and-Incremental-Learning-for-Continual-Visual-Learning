@@ -154,6 +154,7 @@ class ResNet(nn.Module):
         self.layer4 = self._make_layer(block, 512, layers[3], stride=2)
         self.feature = nn.AvgPool2d(4, stride=1)
         self.fc = nn.Linear(512 * block.expansion, num_classes)
+        # self.fc = nn.Linear(512, num_classes)
 
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
@@ -191,9 +192,6 @@ class ResNet(nn.Module):
         x = self.layer4(x)
         x = self.feature(x)
         x = x.view(x.size(0), -1)
-        # y=torch.norm(x,p=2,dim=1,keepdim=True)
-        # x/=y
-        # x = self.fc(x)
 
         return x
 
@@ -210,3 +208,7 @@ def resnet18(pretrained=False, **kwargs):
         now_state_dict.update(pretrained_state_dict)
         model.load_state_dict(now_state_dict)
     return model
+
+
+def resnet34():
+    return ResNet(BasicBlock, [3, 4, 6, 3])

@@ -97,26 +97,26 @@ class CifarDataset(CIFAR100):
             con_label = np.concatenate((con_label, labels[i]), axis=0)
         return con_data, con_label
 
-    def getTestData(self, classes, exemplar_set, n_shot=-1):
-        datas, labels = [], []
-        # if len(exemplar_set) != 0:
-        #     datas.append([exemplar[:50] for exemplar in exemplar_set])
-        #     length = len(datas[0])
-        #     labels.append([np.full((length), label) for label in range(len(exemplar_set))])
-
-        for label in range(classes[0], classes[1]):
-            data = self.data[np.array(self.targets) == label]
-            if n_shot>0:
-                data = data[:n_shot]
-            datas.append(data)
-            labels.append(np.full((data.shape[0]), label))
-
-        datas, labels = self.concatenate(datas, labels)
-        self.Data = datas if self.Data == [] else np.concatenate((self.Data, datas), axis=0)
-        self.Labels = labels if self.Labels == [] else np.concatenate((self.Labels, labels), axis=0)
-        print("the size of test set is %s" % (str(self.Data.shape)))
-        print("the size of test label is %s" % str(self.Labels.shape))
-        self.data_intialization()
+    # def getTestData(self, classes, exemplar_set, n_shot=-1):
+    #     datas, labels = [], []
+    #     # if len(exemplar_set) != 0:
+    #     #     datas.append([exemplar[:50] for exemplar in exemplar_set])
+    #     #     length = len(datas[0])
+    #     #     labels.append([np.full((length), label) for label in range(len(exemplar_set))])
+    #
+    #     for label in range(classes[0], classes[1]):
+    #         data = self.data[np.array(self.targets) == label]
+    #         if n_shot>0:
+    #             data = data[:n_shot]
+    #         datas.append(data)
+    #         labels.append(np.full((data.shape[0]), label))
+    #
+    #     datas, labels = self.concatenate(datas, labels)
+    #     self.Data = datas if self.Data == [] else np.concatenate((self.Data, datas), axis=0)
+    #     self.Labels = labels if self.Labels == [] else np.concatenate((self.Labels, labels), axis=0)
+    #     print("the size of test set is %s" % (str(self.Data.shape)))
+    #     print("the size of test label is %s" % str(self.Labels.shape))
+    #     self.data_intialization()
 
     def getTrainData(self, classes, exemplar_set, n_shot = -1):
 

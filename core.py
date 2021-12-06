@@ -3,7 +3,7 @@ from typing import List, Iterable, Callable, Tuple
 import numpy as np
 import torch
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class NShotTaskSampler(Sampler):
     def __init__(self,
@@ -81,39 +81,37 @@ class NShotTaskSampler(Sampler):
             yield np.stack(batch)
 
 
-def prepare_nshot_task(n: int, k: int, q: int) -> Callable:
-    """Typical n-shot task preprocessing.
+# def prepare_nshot_task(n: int, k: int, q: int) -> Callable:
+#     """Typical n-shot task preprocessing.
+#
+#     # Arguments
+#         n: Number of samples for each class in the n-shot classification task
+#         k: Number of classes in the n-shot classification task
+#         q: Number of query samples for each class in the n-shot classification task
+#
+#     # Returns
+#         prepare_nshot_task_: A Callable that processes a few shot tasks with specified n, k and q
+#     """
+#
+#     def prepare_nshot_task_(batch: Tuple[torch.Tensor, torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+#         """Create 0-k label and move to GPU.
+#
+#         TODO: Move to arbitrary device
+#         """
+#         x, y = batch
+#         x = x.to(device, dtype=torch.float)
+#         # Create dummy 0-(num_classes - 1) label
+#         y = create_nshot_task_label(k, q).to(device)
+#         return x, y
+#
+#     return prepare_nshot_task_
 
-    # Arguments
-        n: Number of samples for each class in the n-shot classification task
-        k: Number of classes in the n-shot classification task
-        q: Number of query samples for each class in the n-shot classification task
 
-    # Returns
-        prepare_nshot_task_: A Callable that processes a few shot tasks with specified n, k and q
-    """
-
-    def prepare_nshot_task_(batch: Tuple[torch.Tensor, torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
-        """Create 0-k label and move to GPU.
-
-        TODO: Move to arbitrary device
-        """
-        x, y = batch
-        x = x.to(device, dtype=torch.float)
-        # Create dummy 0-(num_classes - 1) label
-        y = create_nshot_task_label(k, q).to(device)
-        return x, y
-
-    return prepare_nshot_task_
-
-
-def create_nshot_task_label(k: int, q: int) -> torch.Tensor:
+def create_nshot_task_label(k: int, q: int, batch: Tuple[torch.Tensor, torch.Tensor]) ->  Tuple[torch.Tensor, torch.Tensor]:
     """Creates an n-shot task label.
 
     Label has the structure:
         [0]*q + [1]*q + ... + [k-1]*q
-
-    # TODO: Test this
 
     # Arguments
         k: Number of classes in the n-shot classification task
@@ -122,5 +120,8 @@ def create_nshot_task_label(k: int, q: int) -> torch.Tensor:
     # Returns
         y: Label vector for n-shot task of shape [q * k, ]
     """
-    y = torch.arange(0, k, 1 / q).long()
-    return y
+    """Create 0-k label and move to GPU."""
+    x, y = batch
+    x = x.to(device, dtype=torch.float)
+    y = torch.arange(0, k, 1 / q).long().to(device)
+    return x, y
