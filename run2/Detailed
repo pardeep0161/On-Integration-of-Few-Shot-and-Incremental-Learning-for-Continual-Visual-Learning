@@ -1,0 +1,253 @@
+/home/cis/ppathania/Proto-Networking-iCarl-Integration-main/venv/bin/python /home/cis/ppathania/Proto-Networking-iCarl-Integration-main/main.py
+--------------iCarl_il--------------
+################### Start ###################
+2021-11-25 10:45:08.341617
+###############################################
+Files already downloaded and verified
+Files already downloaded and verified
+################### Model 1 ###################
+2021-11-25 10:45:09.920128
+###############################################
+the size of set is (10000, 32, 32, 3)
+the size of label is (10000,)
+Indexing Train...
+100%|██████████| 10000/10000 [00:00<00:00, 1025502.20it/s]
+the size of set is (2000, 32, 32, 3)
+the size of label is (2000,)
+Indexing Test...
+100%|██████████| 2000/2000 [00:00<00:00, 1223721.08it/s]
+Begin training...
+Epoch [150/150]: 100%|██████████| 150/150 [34:02<00:00, 13.62s/it, loss=0.00101]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 0 to 20:
+Size of examplar set (20, 100, 32, 32, 3)
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 0 to 20:
+Size of examplar set (20, 100, 32, 32, 3)
+compute NMS
+NMS accuracy：52.5
+################### Model 2 ###################
+2021-11-25 11:19:24.825038
+###############################################
+100%|██████████| 7000/7000 [00:00<00:00, 1086205.25it/s]
+the size of set is (7000, 32, 32, 3)
+the size of label is (7000,)
+Indexing Train...
+the size of set is (3000, 32, 32, 3)
+the size of label is (3000,)
+Indexing Test...
+Begin training...
+100%|██████████| 3000/3000 [00:00<00:00, 1214449.57it/s]
+Epoch [150/150]: 100%|██████████| 150/150 [24:07<00:00,  9.65s/it, loss=0.000544]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 20 to 30:
+Size of examplar set (30, 66, 32, 32, 3)
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 20 to 30:
+Size of examplar set (30, 66, 32, 32, 3)
+compute NMS
+NMS accuracy：40.70000076293945
+################### Model 3 ###################
+2021-11-25 11:43:39.087173
+###############################################
+the size of set is (6980, 32, 32, 3)
+the size of label is (6980,)
+Indexing Train...
+100%|██████████| 6980/6980 [00:00<00:00, 1151565.19it/s]
+the size of set is (2980, 32, 32, 3)
+the size of label is (2980,)
+Indexing Test...
+100%|██████████| 2980/2980 [00:00<00:00, 1198832.33it/s]
+Begin training...
+Epoch [150/150]: 100%|██████████| 150/150 [24:32<00:00,  9.82s/it, loss=0.00101]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 30 to 40:
+Size of examplar set (40, 50, 32, 32, 3)
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 30 to 40:
+Size of examplar set (40, 50, 32, 32, 3)
+compute NMS
+NMS accuracy：42.818790435791016
+################### Model 4 ###################
+2021-11-25 12:08:17.762569
+###############################################
+the size of set is (7000, 32, 32, 3)
+the size of label is (7000,)
+Indexing Train...
+100%|██████████| 7000/7000 [00:00<00:00, 1155956.06it/s]
+the size of set is (3000, 32, 32, 3)
+the size of label is (3000,)
+Indexing Test...
+100%|██████████| 3000/3000 [00:00<00:00, 1150279.92it/s]
+Epoch [1/150]:   0%|          | 0/150 [00:00<?, ?it/s]Begin training...
+Epoch [150/150]: 100%|██████████| 150/150 [24:23<00:00,  9.76s/it, loss=0.000452]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 40 to 50:
+Size of examplar set (50, 40, 32, 32, 3)
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 40 to 50:
+Size of examplar set (50, 40, 32, 32, 3)
+compute NMS
+NMS accuracy：35.766666412353516
+################### End Time ###################
+2021-11-25 12:32:47.711182
+###############################################
+################### Total Time ###################
+1.0:60.0:39.369564999999966
+###############################################
+---------------few_shot-------------
+################### Start ###################
+2021-11-25 12:32:48.020614
+###############################################
+Files already downloaded and verified
+Files already downloaded and verified
+################### Model Training ###################
+2021-11-25 12:32:49.541165
+###############################################
+the size of set is (2000, 32, 32, 3)
+the size of label is (2000,)
+Indexing Train...
+100%|██████████| 2000/2000 [00:00<00:00, 940426.91it/s]
+the size of set is (2000, 32, 32, 3)
+the size of label is (2000,)
+Indexing Test...
+Begin training...
+100%|██████████| 2000/2000 [00:00<00:00, 1159768.84it/s]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examplar for classes from 0 to 50
+Size of examplar set 50
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examplar for classes from 0 to 50
+Size of examplar set 50
+compute NMS
+NMS accuracy：27.25
+################### End Time ###################
+2021-11-25 23:05:21.254563
+###############################################
+################### Total Time ###################
+10.0:600.0:33.2339490000013
+###############################################
+------------few_shot_il----------------
+################### Start ###################
+2021-11-25 23:05:21.528005
+###############################################
+Files already downloaded and verified
+Files already downloaded and verified
+################### Model 1 ###################
+2021-11-25 23:05:22.909951
+###############################################
+100%|██████████| 10000/10000 [00:00<00:00, 1014808.26it/s]
+the size of set is (10000, 32, 32, 3)
+the size of label is (10000,)
+Indexing Train...
+100%|██████████| 2000/2000 [00:00<00:00, 1183995.48it/s]
+the size of set is (2000, 32, 32, 3)
+the size of label is (2000,)
+Indexing Test...
+Begin training...
+Epoch [150/150]: 100%|██████████| 150/150 [33:46<00:00, 13.51s/it, loss=0.00353]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 0 to 20:
+Size of examplar set (20, 100, 32, 32, 3)
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 0 to 20:
+Size of examplar set (20, 100, 32, 32, 3)
+compute NMS
+NMS accuracy：60.349998474121094
+################### Model 2 ###################
+2021-11-25 23:39:19.453098
+###############################################
+the size of set is (2400, 32, 32, 3)
+the size of label is (2400,)
+Indexing Train...
+100%|██████████| 2400/2400 [00:00<00:00, 1104248.53it/s]
+the size of set is (2400, 32, 32, 3)
+the size of label is (2400,)
+Indexing Test...
+Begin training...
+100%|██████████| 2400/2400 [00:00<00:00, 998941.11it/s]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examplar for classes from 20 to 30
+Size of examplar set 30
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examplar for classes from 20 to 30
+Size of examplar set 30
+compute NMS
+NMS accuracy：35.506248474121094
+################### Model 3 ###################
+2021-11-26 05:55:06.777991
+###############################################
+100%|██████████| 2120/2120 [00:00<00:00, 1070284.60it/s]
+the size of set is (2120, 32, 32, 3)
+the size of label is (2120,)
+Indexing Train...
+the size of set is (2120, 32, 32, 3)
+the size of label is (2120,)
+Indexing Test...
+Begin training...
+100%|██████████| 2120/2120 [00:00<00:00, 1049566.16it/s]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examplar for classes from 30 to 40
+Size of examplar set 40
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examplar for classes from 30 to 40
+Size of examplar set 40
+compute NMS
+NMS accuracy：32.452083587646484
+################### Model 4 ###################
+2021-11-26 14:13:37.206317
+###############################################
+100%|██████████| 6800/6800 [00:00<00:00, 1080801.36it/s]
+the size of set is (6800, 32, 32, 3)
+the size of label is (6800,)
+Indexing Train...
+100%|██████████| 2800/2800 [00:00<00:00, 1048669.63it/s]
+the size of set is (2800, 32, 32, 3)
+the size of label is (2800,)
+Indexing Test...
+Begin training...
+Epoch [150/150]: 100%|██████████| 150/150 [23:47<00:00,  9.52s/it, loss=0.0187]
+...Computing Train Exemplar set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 40 to 50:
+Size of examplar set (50, 40, 32, 32, 3)
+Computing class mean for exemplar set...
+...Creating Test Example set...
+Reducing of exemplar set size for previous classes
+Construct examples for classes from 40 to 50:
+Size of examplar set (50, 40, 32, 32, 3)
+compute NMS
+NMS accuracy：6.0
+################### End Time ###################
+2021-11-26 14:37:31.208135
+###############################################
+################### Total Time ###################
+15.0:900.0:9.680130000000645
+###############################################
+----------------------------
+
+Process finished with exit code 0
